@@ -1,6 +1,8 @@
 # Irish Beacon Watch Changelog
 
-## verson 0.2.0
+## verson 0.1.1
+added Marine and Weather pages
+Added top navlink to Forecast page layout
 
 
 ## verson 0.1.0
