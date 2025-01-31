@@ -3,6 +3,7 @@
 ## verson 0.1.1
 added Marine and Weather pages
 Added top navlink to Forecast page layout
+Added openstreetmap to home page with multipe markers
 
 
 ## verson 0.1.0
