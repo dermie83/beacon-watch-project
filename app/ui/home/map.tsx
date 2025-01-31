@@ -5,7 +5,7 @@ import { LatLngExpression, LatLngTuple } from 'leaflet';
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
-// import { Lighthouse } from '@/app/lib/definitions';
+// import { LighthouseProps } from '@/app/lib/definitions';
 
 
 // interface Lighthouses {
