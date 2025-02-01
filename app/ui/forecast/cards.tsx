@@ -6,6 +6,7 @@
 // } from '@heroicons/react/24/outline';
 // import { lusitana } from '@/app/ui/fonts';
 import { getWeather } from '@/app/lib/data';
+import { lusitana } from '../fonts';
 
 const lighthouses = [
   {
@@ -29,12 +30,40 @@ const lighthouses = [
 export default async function CardWrapper() {
   
   const {current,daily,hourly} = await getWeather(lighthouses[0].latitude, lighthouses[0].longitude, 'Europe/Berlin' );
-  console.log("current weather...",current);
-  console.log("first daily reading...",daily[0]);
-  console.log("first hourly reading...",hourly[0])
+
+  const dailyTemps = daily.map((item) => item.maxTemp);
+  const feelsLikeTemps = hourly.map((item) => item.feelsLike);
+  
   return (
       <div className={`flex flex-col items-center justify-center border border-foregroundColor rounded-md p-0.5`}>
+        <Card title="Current" value={current.currentTemp} />
+        <Card title="Tomorrows Temp" value={dailyTemps[1]} />
+        <Card title="Feels Like Temp" value={feelsLikeTemps[0]} />
       </div>
     );
+}
+
+export function Card({
+  title,
+  value,
+}: {
+  title:string,
+  value:number | string[]
+}) {
+
+  return (
+    <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
+      <div className="flex p-4">
+        
+        <h3 className="ml-2 text-sm font-medium">{title}</h3>
+      </div>
+      <p
+        className={`${lusitana.className}
+          truncate rounded-xl bg-white px-4 py-8 text-center text-2xl`}
+      >
+        {value}
+      </p>
+    </div>
+  );
 }
 

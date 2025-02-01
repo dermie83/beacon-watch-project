@@ -55,7 +55,7 @@ export default function Map() {
             />
         {lighthouses.map((item, i) => (
             <Marker key = {i} position={{lat: item.latitude, lng:item.longitude}} draggable={false}>
-                <Popup>Hey ! I study here</Popup>
+                <Popup>{item.name}</Popup>
             </Marker>))}
         </MapContainer>
     )}
